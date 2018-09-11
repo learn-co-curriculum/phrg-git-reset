@@ -110,18 +110,6 @@ Using our `git log` example, let's run `git reset --hard HEAD~1` on our `example
 1. There are no staged changes.
 1. There are no untracked changes.
 
-### Default `--mixed`
-
-We never really see `--mixed` because it is the default option. `--mixed` will take the changes we have reset and leave them untracked.
-
-Using our `git log` example, let's run `git reset HEAD~1` on our `example_branch`.
-
-1. Our local copy now points to the "Add kitty image" commit.
-1. There are no staged changes.
-1. Our "Add doggy image" content is untracked, but present.
-
-If we wish add this content back to our project, we would need to `git add`, `git commit`, and `git push --force-with-lease`.
-
 ### `--soft`
 
 `--soft` will take the changes we have reset and leave them staged.
@@ -133,6 +121,18 @@ Using our `git log` example, let's run `git reset --soft HEAD~1` on our `example
 1. There are no untracked changes.
 
 If we wish add this content back to our project, we would need to `git commit` and `git push --force-with-lease`.
+
+### `--mixed` (the default)
+
+We never really see `--mixed` because it is the default option. `--mixed` will take the changes we have reset and leave them untracked.
+
+Using our `git log` example, let's run `git reset HEAD~1` on our `example_branch`.
+
+1. Our local copy now points to the "Add kitty image" commit.
+1. There are no staged changes.
+1. Our "Add doggy image" content is untracked, but present.
+
+If we wish add this content back to our project, we would need to `git add`, `git commit`, and `git push --force-with-lease`.
 
 ### Why force the push?
 
